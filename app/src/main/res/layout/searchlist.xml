@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/card"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="#8EB5DC">
+        <TextView
+            android:id="@+id/nameinf"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Name"
+            android:textSize="15sp"/>
+        <TextView
+            android:id="@+id/dateinf"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="datee"
+            android:textSize="15sp"/>
+
+
+
+    </LinearLayout>
+</androidx.cardview.widget.CardView>
