@@ -26,6 +26,7 @@ public class newuser extends AppCompatActivity {
     Button bt;
     Toolbar toolbar;
     FirebaseAuth auth;
+    DatabaseReference ref2,ref3,ref4,ref5;
 
     EditText Name,Email,phone,Pass,PassCon;
     User user;
@@ -49,7 +50,15 @@ public class newuser extends AppCompatActivity {
         user=new User();
         auth = FirebaseAuth.getInstance();
         ref= FirebaseDatabase.getInstance().getReference().child("User");
+        ref2= FirebaseDatabase.getInstance().getReference().child("document").child("l").child("Name");
+        ref3= FirebaseDatabase.getInstance().getReference().child("document").child("l").child("Expired_data");
+        ref4= FirebaseDatabase.getInstance().getReference().child("document").child("l1").child("Name");
+        ref5= FirebaseDatabase.getInstance().getReference().child("document").child("l1").child("Expired_data");
 
+        ref2.setValue("hgf");
+        ref3.setValue("02/03/2020");
+        ref4.setValue("maram");
+        ref5.setValue("02/03/2020");
         bt.setOnClickListener(new View.OnClickListener() {
 
             @Override

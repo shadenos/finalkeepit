@@ -38,6 +38,9 @@ public class DateData {
     public String getMonthString(){
         return month > 9 ? String.format("%d", month) : String.format("0%d", month);
     }
+    public String getYearString(){
+        return year > 9 ? String.format("%d", year) : String.format("0%d", year);
+    }
 
     public DateData setMonth(int month) {
         this.month = month;

@@ -68,7 +68,7 @@ public class SearchActivity extends AppCompatActivity {
                 }else {
                     namelist.clear();
                     datelist.clear();
-                    newrv.removeAllViews();
+                  newrv.removeAllViews();
                 }
             }
         });
