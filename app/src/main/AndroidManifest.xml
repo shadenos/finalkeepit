@@ -11,7 +11,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".EditActivity"  android:theme="@style/Theme.Transparent"></activity>
+        <activity android:name=".tryjust"></activity>
+        <activity android:name=".editInfo" />
+        <activity
+            android:name=".EditActivity"
+            android:theme="@style/Theme.Transparent" />
         <activity android:name=".docinfoActivity" />
         <activity android:name=".profilActivity" />
         <activity

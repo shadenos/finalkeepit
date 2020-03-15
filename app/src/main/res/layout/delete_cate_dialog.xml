@@ -1,6 +1,7 @@
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/card"
+    android:background="@drawable/round3"
     app:cardBackgroundColor="#8eb5dc"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
@@ -28,7 +29,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="10dp"
-            android:text="هل انت متاكد من حذف التصنيف؟"
+            android:text="هل انت متاكد من حذف الفاتورة ؟"
             android:textSize="20sp" />
 
         <LinearLayout

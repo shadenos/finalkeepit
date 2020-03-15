@@ -70,7 +70,7 @@ public class newuser extends AppCompatActivity {
                 Passc=PassCon.getText().toString().trim();
 
                 if(!p.equals(Passc)) {
-                    startActivity(new Intent(getApplicationContext(), activity_homepage.class));
+                    startActivity(new Intent(getApplicationContext(), tryjust.class));
 
                     PassCon.setError("كلمة المرور غير متطابقه ");
                     return;}
