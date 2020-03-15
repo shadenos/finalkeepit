@@ -49,10 +49,11 @@ public class editInfo extends AppCompatActivity {
        // scrollView=  (ScrollView) findViewById(R.id.s1);
         toolbar = (Toolbar) findViewById(R.id.toolbar8);
        // Toolbar title = toolbar.findViewById(R.id.title);
+        /*
         setSupportActionBar(toolbar);
-       h=findViewById(R.id.textView2);
+       h=findViewById(R.id.textView0042);
 
-        y9=findViewById(R.id.textView38);
+        y9=findViewById(R.id.textView42);
         spinner=findViewById(R.id.spinner);
         List<String> list=new ArrayList<>();
         list.add("لعاب");
@@ -135,8 +136,9 @@ public class editInfo extends AppCompatActivity {
 
         return true;
     }
-    public void edit() {
+    public void edit() {*/
 
     }
 
 }
+
