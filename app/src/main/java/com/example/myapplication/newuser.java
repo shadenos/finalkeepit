@@ -70,11 +70,12 @@ public class newuser extends AppCompatActivity {
                 Passc=PassCon.getText().toString().trim();
 
                 if(!p.equals(Passc)) {
+                    startActivity(new Intent(getApplicationContext(), editInfo.class));
 
                     PassCon.setError("كلمة المرور غير متطابقه ");
                     return;}
                 if (N.isEmpty() || N.length() >32)
-                { Name.setError("ادخل الاسم بشكل صحيح"); return;
+                { Name.setError("ادخ34ل الاسم بشكل صحيح"); return;
 
                 } if(E.isEmpty()||!Patterns.EMAIL_ADDRESS.matcher(E).matches())
                 { Email.setError("ادخل الايميل بشكل صحيح "); return;}
@@ -86,7 +87,6 @@ public class newuser extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
-                            startActivity(new Intent(getApplicationContext(), editInfo.class));
 
                             Toast.makeText(newuser.this, "تم انشاء حسابك بنجاح", Toast.LENGTH_SHORT).show();
                             Toast.makeText(newuser.this,"تم تسجيل الدخول بنجاح",Toast.LENGTH_LONG).show(); //طلعت

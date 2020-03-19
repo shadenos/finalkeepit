@@ -48,6 +48,10 @@ public class editInfo extends AppCompatActivity {
         setContentView(R.layout.activity_edit_info);
        // scrollView=  (ScrollView) findViewById(R.id.s1);
         toolbar = (Toolbar) findViewById(R.id.toolbar8);
+        scrollView =findViewById(R.id.scrol);
+        scrollView.setEnabled(false);
+      //  scrollView.setPressed(true);
+        //scrollView.setClickable(true);
        // Toolbar title = toolbar.findViewById(R.id.title);
         /*
         setSupportActionBar(toolbar);
