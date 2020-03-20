@@ -29,25 +29,26 @@ import sun.bob.mcalendarview.vo.DateData;
 
 public class CalenderActivity extends AppCompatActivity {
    // calendarAdapter calendarAdapter;
-    EditText search1;
     DatabaseReference ref2, ref3;
     public static  String expired_data;
     public static  String name;
 
     ArrayList<String> nameslist;
-   // ArrayList<String> datelist;
     RecyclerView recyclerView;
     EditText search;
 
     private MCalendarView expCalendarView;
     RecyclerView.LayoutManager layoutManager;
-    calendarAdapter adapter,adapter1;
+    calendarAdapter adapter;
     DatabaseReference databaseReference;
     FirebaseUser firebaseUser;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_calender);
+
         nameslist=new ArrayList<>();
         search=(EditText) findViewById(R.id.searchView);
 

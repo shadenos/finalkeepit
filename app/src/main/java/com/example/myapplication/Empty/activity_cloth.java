@@ -5,12 +5,20 @@ import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.viewpager.widget.ViewPager;
 
+import com.example.myapplication.Adaptors.ViewPagerAdapter;
+import com.example.myapplication.FragmentActive;
+import com.example.myapplication.FragmentExpired;
 import com.example.myapplication.R;
+import com.google.android.material.tabs.TabLayout;
 
 public class activity_cloth extends AppCompatActivity {
 
     Toolbar toolbar;
+    private TabLayout tabLayout;
+    private ViewPager viewPager;
+    private ViewPagerAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +33,19 @@ public class activity_cloth extends AppCompatActivity {
             String title=intent.getStringExtra("title");
             toolbar.setTitle(title);
         }
+
+        //START HERE
+
+        tabLayout = (TabLayout)findViewById(R.id.tabLayout_id);
+        viewPager = (ViewPager)findViewById(R.id.viewpager_id);
+        adapter = new ViewPagerAdapter(getSupportFragmentManager());
+
+        // ADD FRAGMENT HERE
+
+        adapter.AddFragment(new FragmentActive(),"فعّالة");
+        adapter.AddFragment(new FragmentExpired(),"منتهية");
+        viewPager.setAdapter(adapter);
+        tabLayout.setupWithViewPager(viewPager);
     }
 
 }

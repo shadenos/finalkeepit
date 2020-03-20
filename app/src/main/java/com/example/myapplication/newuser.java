@@ -13,6 +13,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.myapplication.Data.User;
+import com.example.myapplication.Empty.activity_cloth;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -70,18 +71,18 @@ public class newuser extends AppCompatActivity {
                 Passc=PassCon.getText().toString().trim();
 
                 if(!p.equals(Passc)) {
-                    startActivity(new Intent(getApplicationContext(), editInfo.class));
+                    startActivity(new Intent(getApplicationContext(), activity_cloth.class));
 
-                    PassCon.setError("كلمة المرور غير متطابقه ");
+                    PassCon.setError("كلمة المرور غير متطابقة");
                     return;}
                 if (N.isEmpty() || N.length() >32)
-                { Name.setError("ادخ34ل الاسم بشكل صحيح"); return;
+                { Name.setError("أدخل الاسم بشكل صحيح"); return;
 
                 } if(E.isEmpty()||!Patterns.EMAIL_ADDRESS.matcher(E).matches())
-                { Email.setError("ادخل الايميل بشكل صحيح "); return;}
-                if(p.isEmpty()||p.length()<8 ) { Pass.setError("ادخل الرقم السري بشكل صحيح"); return; }
+                { Email.setError("أدخل البريد الالكتروني بشكل صحيح"); return;}
+                if(p.isEmpty()||p.length()<8 ) { Pass.setError("أدخل الرقم السري بشكل صحيح"); return; }
                 if(ph.isEmpty() || ph.length() >10 || ph.length() <10)
-                { phone.setError("ادخل رقم الجوال بشكل صحيح"); return; }
+                { phone.setError("أدخل رقم الجوال بشكل صحيح"); return; }
                 auth.createUserWithEmailAndPassword(E, p).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
 
                     @Override
