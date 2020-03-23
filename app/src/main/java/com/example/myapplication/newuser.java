@@ -27,7 +27,7 @@ public class newuser extends AppCompatActivity {
     Button bt;
     Toolbar toolbar;
     FirebaseAuth auth;
-    DatabaseReference ref2,ref3,ref4,ref5;
+    DatabaseReference ref2,ref3,ref4,ref5,ref6,ref7;
 
     EditText Name,Email,phone,Pass,PassCon;
     User user;
@@ -55,11 +55,15 @@ public class newuser extends AppCompatActivity {
         ref3= FirebaseDatabase.getInstance().getReference().child("document").child("l").child("Expired_data");
         ref4= FirebaseDatabase.getInstance().getReference().child("document").child("l1").child("Name");
         ref5= FirebaseDatabase.getInstance().getReference().child("document").child("l1").child("Expired_data");
+        ref6= FirebaseDatabase.getInstance().getReference().child("document").child("l2").child("Name");
+        ref7= FirebaseDatabase.getInstance().getReference().child("document").child("l2").child("Expired_data");
 
         ref2.setValue("hgf");
         ref3.setValue("02/03/2020");
         ref4.setValue("maram");
         ref5.setValue("02/03/2020");
+        ref6.setValue("hgf");
+        ref7.setValue("25/03/2020");
         bt.setOnClickListener(new View.OnClickListener() {
 
             @Override
@@ -71,7 +75,7 @@ public class newuser extends AppCompatActivity {
                 Passc=PassCon.getText().toString().trim();
 
                 if(!p.equals(Passc)) {
-                    startActivity(new Intent(getApplicationContext(), activity_cloth.class));
+                    startActivity(new Intent(getApplicationContext(), Notification.class));
 
                     PassCon.setError("كلمة المرور غير متطابقة");
                     return;}

@@ -62,20 +62,19 @@ public class FragmentExpired extends Fragment {
 
         expiredInvoices = new ArrayList<>();
        // expiredInvoices.add(new invoice("bshayer","9/7/1998","9/7/1999"));
-
-        databaseReference= FirebaseDatabase.getInstance().getReference().child("document");
+        databaseReference= FirebaseDatabase.getInstance().getReference();
         firebaseUser= FirebaseAuth.getInstance().getCurrentUser();
 
        // expiredInvoices.clear();
        // recyclerView.removeAllViews();
 
-        databaseReference.addValueEventListener(new ValueEventListener() {
+        databaseReference.child("document").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                for (DataSnapshot datashot:dataSnapshot.getChildren()){
+                for(DataSnapshot datashot:dataSnapshot.getChildren() ){
+                    expired_data=datashot.child("Expired_data").getValue(String.class);
                     name= datashot.child("Name").getValue(String.class);
                     purchase_data=datashot.child("Expired_data").getValue(String.class);  //wrong data********
-                    expired_data=datashot.child("Expired_data").getValue(String.class);
 
                     Calendar calendar = Calendar.getInstance();
                     String currentDate = DateFormat.getDateInstance().format(calendar.getTime());
@@ -89,6 +88,7 @@ public class FragmentExpired extends Fragment {
                     }
 
                     else if(expired_data.compareTo(currentDate)==0) { //both dates are equal
+                        expiredInvoices.add(new invoice (name,purchase_data,expired_data));
 
                     }
 

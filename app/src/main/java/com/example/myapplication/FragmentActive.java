@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -42,7 +43,7 @@ public class FragmentActive extends Fragment {
     public static String purchase_data;
     public static String expired_data;
 
-
+Button bt;
 
     public FragmentActive() {
     }
@@ -63,29 +64,40 @@ public class FragmentActive extends Fragment {
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        activeInvoices = new ArrayList<>();
+        onStart();
+      //  activeInvoices.add(new invoice ("name","purchase_data","expired_data"));
 
       // activeInvoices.add(new invoice("shaden","9/7/1998","9/7/1999"));
       // activeInvoices.add(new invoice("maram","9/7/1998","9/7/1999"));
 
-        databaseReference= FirebaseDatabase.getInstance().getReference().child("document");
+
+
+    } //onCreate
+    public void onStart() {
+
+        super.onStart();
+        activeInvoices = new ArrayList<>();
+        databaseReference= FirebaseDatabase.getInstance().getReference();
         firebaseUser= FirebaseAuth.getInstance().getCurrentUser();
 
-      //  activeInvoices.clear();
-      //  recyclerView.removeAllViews();
 
-        databaseReference.addValueEventListener(new ValueEventListener() {
+        //  activeInvoices.clear();
+        //  recyclerView.removeAllViews();
+
+
+        // String uid=databaseReference.getKey();
+        databaseReference.child("document").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                for (DataSnapshot datashot:dataSnapshot.getChildren()){
-                    name= datashot.child("Name").getValue(String.class);
-                    purchase_data=datashot.child("Expired_data").getValue(String.class);  //wrong data********
+                for(DataSnapshot datashot:dataSnapshot.getChildren() ){
                     expired_data=datashot.child("Expired_data").getValue(String.class);
-
+                    name= datashot.child("Name").getValue(String.class);
+                    purchase_data=dataSnapshot.child("Expired_data").getValue(String.class); //wrong data********
+                    activeInvoices.add(new invoice (name,purchase_data,expired_data));
                     Calendar calendar = Calendar.getInstance();
                     String currentDate = DateFormat.getDateInstance().format(calendar.getTime());
 
-                    if(expired_data.compareTo(currentDate)<0) { //less than currentDate
+                    if(expired_data.compareTo(currentDate)>0) { //less than currentDate
                         activeInvoices.add(new invoice (name,purchase_data,expired_data));
                     }
 
@@ -94,11 +106,11 @@ public class FragmentActive extends Fragment {
                     }
 
                     else if(expired_data.compareTo(currentDate)==0) { //both dates are equal
-                        activeInvoices.add(new invoice (name,purchase_data,expired_data));
 
-                    }
 
-                }
+
+
+                    }}
 
             }
 
@@ -109,7 +121,7 @@ public class FragmentActive extends Fragment {
             }
         });
 
-    } //onCreate
+    }
 
 
 
