@@ -97,7 +97,7 @@ Button bt;
                     Calendar calendar = Calendar.getInstance();
                     String currentDate = DateFormat.getDateInstance().format(calendar.getTime());
 
-                    if(expired_data.compareTo(currentDate)>0) { //less than currentDate
+                    if(expired_data.compareTo(currentDate)<0) { //less than currentDate
                         activeInvoices.add(new invoice (name,purchase_data,expired_data));
                     }
 
