@@ -1,41 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/gradient"
-    android:orientation="vertical"
-    tools:context=".Empty.activity_game">
-
+    tools:context=".Empty.activity_game"
+    android:orientation="vertical">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="603dp"
+        app:title="ألعاب"
+        app:titleMarginStart="130dp"
+        android:layout_marginBottom="10dp"
         android:background="#3C4277"
         android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
-        app:navigationIcon="@drawable/back"
-        app:title="العاب"
-        app:titleMarginStart="190dp" />
+        app:navigationIcon="@drawable/back"/>
+    <!--app:title="أزياء"-->
+    <!-- app:titleMarginStart="130dp"-->
 
-<!--    <android.support.design.widget.TapLayout-->
-    <!--        android:id="@+id/taplayout"-->
-    <!--        android:layout_width="match_parent"-->
-    <!--        android:layout_height="wrap_content"-->
-    <!--        android:background="@drawable/gradient"-->
-    <!--        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar" />-->
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tabLayout_id"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="#b3b2b2"
+        app:tabMode = "fixed"
+        app:tabGravity="fill">
+
+    </com.google.android.material.tabs.TabLayout>
 
     <androidx.viewpager.widget.ViewPager
-        android:id="@+id/pager"
+        android:id="@+id/viewpager_id"
         android:layout_width="match_parent"
-        android:layout_height="fill_parent" />
+        android:layout_height="match_parent">
+
+
+    </androidx.viewpager.widget.ViewPager>
+
 
 </LinearLayout>

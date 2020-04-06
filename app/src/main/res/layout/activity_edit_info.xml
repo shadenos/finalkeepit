@@ -6,7 +6,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
+
     android:background="@drawable/gradient"
 
 
@@ -20,8 +21,9 @@
 
 <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar8"
-        android:layout_width="413dp"
-        android:layout_height="67dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+
         android:background="#3C4277"
         android:minHeight="?attr/actionBarSize"
         android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
@@ -33,7 +35,7 @@
         app:layout_constraintVertical_bias="0.0"
         app:navigationIcon="@drawable/back"
         app:title="تعديل فاتورة"
-        app:titleMarginStart="120dp" />
+        app:titleMarginStart="130dp" />
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
 
@@ -42,7 +44,7 @@
     <ScrollView
         android:id="@+id/scrol"
         android:layout_width="match_parent"
-        android:layout_height="373dp"
+        android:layout_height="wrap_content"
         android:layout_marginTop="0dp"
         android:layout_marginBottom="100dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -54,8 +56,8 @@
         tools:ignore="MissingConstraints">
 
         <LinearLayout
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_margin="16dp"
             android:orientation="vertical">
 

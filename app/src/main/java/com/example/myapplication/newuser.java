@@ -51,19 +51,17 @@ public class newuser extends AppCompatActivity {
         user=new User();
         auth = FirebaseAuth.getInstance();
         ref= FirebaseDatabase.getInstance().getReference().child("User");
-        ref2= FirebaseDatabase.getInstance().getReference().child("document").child("l").child("Name");
-        ref3= FirebaseDatabase.getInstance().getReference().child("document").child("l").child("Expired_data");
-        ref4= FirebaseDatabase.getInstance().getReference().child("document").child("l1").child("Name");
-        ref5= FirebaseDatabase.getInstance().getReference().child("document").child("l1").child("Expired_data");
-        ref6= FirebaseDatabase.getInstance().getReference().child("document").child("l2").child("Name");
-        ref7= FirebaseDatabase.getInstance().getReference().child("document").child("l2").child("Expired_data");
+        ref2= FirebaseDatabase.getInstance().getReference().child("document").push();
+       // ref3= FirebaseDatabase.getInstance().getReference().child("document").push();
+      //  ref4= FirebaseDatabase.getInstance().getReference().child("document").child("Name");
+        //ref5= FirebaseDatabase.getInstance().getReference().child("document").child("Expired_data");
+        //ref6= FirebaseDatabase.getInstance().getReference().child("document").child("Name");
+        //ref7= FirebaseDatabase.getInstance().getReference().child("document").child("Expired_data");
 
-        ref2.setValue("hgf");
-        ref3.setValue("02/03/2020");
-        ref4.setValue("maram");
-        ref5.setValue("02/03/2020");
-        ref6.setValue("hgf");
-        ref7.setValue("25/03/2020");
+
+        ref2.child("Expired_data").setValue("06/04/2020");
+        ref2.child("Name").setValue("hgf");
+
         bt.setOnClickListener(new View.OnClickListener() {
 
             @Override
@@ -75,7 +73,7 @@ public class newuser extends AppCompatActivity {
                 Passc=PassCon.getText().toString().trim();
 
                 if(!p.equals(Passc)) {
-                    startActivity(new Intent(getApplicationContext(), activity_cloth.class));
+                    startActivity(new Intent(getApplicationContext(), addDoc2Activity.class));
 
                     PassCon.setError("كلمة المرور غير متطابقة");
                     return;}

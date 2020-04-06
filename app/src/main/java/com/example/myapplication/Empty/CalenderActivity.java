@@ -60,17 +60,14 @@ public class CalenderActivity extends AppCompatActivity {
         expCalendarView = ((MCalendarView) findViewById(R.id.calendar));
 
 /////////////////
+        expCalendarView.markDate(2020,4,10);
 
         databaseReference= FirebaseDatabase.getInstance().getReference();
         firebaseUser= FirebaseAuth.getInstance().getCurrentUser();
        // ref3 = FirebaseDatabase.getInstance().getReference().child("document").child("l1");
 
-
-
         //databaseReference= FirebaseDatabase.getInstance().getReference();
       //  firebaseUser= FirebaseAuth.getInstance().getCurrentUser();
-
-
         // String h=expired_data.substring(0,2);
        // nameslist.add(h);
       //  adapter = new calendarAdapter(CalenderActivity.this, nameslist);
@@ -106,7 +103,7 @@ public class CalenderActivity extends AppCompatActivity {
                     expCalendarView.markDate(u2,u1,u);
 
 
-                }
+               }
 
             }
 
@@ -124,31 +121,31 @@ public class CalenderActivity extends AppCompatActivity {
                 databaseReference.child("document").addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                        for(DataSnapshot datashot:dataSnapshot.getChildren() ){
-                            expired_data=datashot.child("Expired_data").getValue(String.class);
-                            name= datashot.child("Name").getValue(String.class);
+                        for (DataSnapshot datashot : dataSnapshot.getChildren()) {
+                            expired_data = datashot.child("Expired_data").getValue(String.class);
+                            name = datashot.child("Name").getValue(String.class);
 
 
                             String g = date.getDayString();
                             String l = date.getMonthString();
                             String m = date.getYearString();
-                            String n =g+"/"+l+"/"+m;
+                            String n = g + "/" + l + "/" + m;
 
-                                if(expired_data.equals(n)) {
-                                    nameslist.add(name);
-                                    expCalendarView.markDate(2020,3,20);
+                            if (expired_data.equals(n)) {
+                                nameslist.add(name);
+                                // expCalendarView.markDate(2020,3,20);
 
-                                } else{
+                            } else {
 
-                                    nameslist.clear();
-                                    recyclerView.removeAllViews();
-                                }
+                                nameslist.clear();
+                                recyclerView.removeAllViews();
+                            }
                             adapter = new calendarAdapter(CalenderActivity.this, nameslist);
                             recyclerView.setAdapter(adapter);
                         }
 
-                    }
 
+                    }
                     @Override
                     public void onCancelled(@NonNull DatabaseError databaseError) {
 
