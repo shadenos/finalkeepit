@@ -71,6 +71,7 @@
         android:id="@+id/editText2"
         android:layout_width="280dp"
         android:layout_height="32dp"
+        android:hint="على الأقل 8 أحرف"
 
         android:background="@drawable/round"
         android:ems="10"
@@ -132,6 +133,7 @@
         android:layout_height="32dp"
         android:background="@drawable/round"
         android:ems="10"
+        android:hint="name@example.com"
         android:inputType="textEmailAddress"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -161,6 +163,7 @@
         android:background="@drawable/round"
         android:ems="10"
         android:inputType="phone"
+        android:hint="05********"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.807"
